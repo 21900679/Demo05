@@ -5,12 +5,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class gameboard extends JPanel implements MouseListener {
-    boolean color = true;   //true(black), false(white)
+    boolean color = false;   //true(black), false(white)
     int[][] stones = new int[8][8];     // 1 (black), 2 (white)
+    Color temp;
     gameboard(){
         setBounds(50, 50, 600, 600);
         setBackground(new Color(201, 146, 65));
-        setBorder(new LineBorder(Color.black, 1));
+        setBorder(new LineBorder(Color.black, 2));
 
         stones[3][3] = stones[4][4] = 2;
         stones[3][4] = stones[4][3] = 1;
@@ -29,15 +30,21 @@ public class gameboard extends JPanel implements MouseListener {
         for(int i = 0; i < 8; i++){
             for(int j = 0; j < 8; j++){
                 if(stones[i][j] == 1){
+                    game.num1++;
                     g.setColor(Color.black);
                     g.fillOval(i * 75, j * 75, 75, 75);
+
                 }
                 if(stones[i][j] == 2){
+                    game.num2++;
                     g.setColor(Color.white);
                     g.fillOval(i * 75, j * 75, 75, 75);
                 }
             }
         }
+        game.score1.setText("● X " + game.num1);
+        game.score2.setText("○ X " + game.num2);
+        game.num1 = game.num2 = 0;
     }
 
     @Override
@@ -46,6 +53,11 @@ public class gameboard extends JPanel implements MouseListener {
         System.out.println("Y = " + e.getY());
 
         if(stones[e.getX() / 75][e.getY() / 75] == 0){
+            temp = game.btn1;
+            game.btn1 = game.btn2;
+            game.btn2 = temp;
+            game.player1.setBackground(game.btn1);
+            game.player2.setBackground(game.btn2);
             color = !color;
             if(color){
                 stones[e.getX() / 75][e.getY() / 75] = 1;
