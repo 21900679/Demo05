@@ -8,6 +8,7 @@ public class gameboard extends JPanel implements MouseListener {
     boolean color = false;   //true(black), false(white)
     int[][] stones = new int[8][8];     // 1 (black), 2 (white)
     Color temp;
+    int count;
     gameboard(){
         setBounds(50, 50, 600, 600);
         setBackground(new Color(201, 146, 65));
@@ -35,20 +36,30 @@ public class gameboard extends JPanel implements MouseListener {
                     g.fillOval(i * 75, j * 75, 75, 75);
 
                 }
-                if(stones[i][j] == 2){
+                else if(stones[i][j] == 2){
                     game.num2++;
                     g.setColor(Color.white);
                     g.fillOval(i * 75, j * 75, 75, 75);
                 }
+                else
+                    count++;
             }
         }
         game.score1.setText("● X " + game.num1);
         game.score2.setText("○ X " + game.num2);
-        game.num1 = game.num2 = 0;
+        if(count == 0)
+            new result();
+        game.num1 = game.num2 = count = 0;
+
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {    //마우스 버튼 클릭
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {    //마우스 버튼 누름
         System.out.println("X = " + e.getX());
         System.out.println("Y = " + e.getY());
 
@@ -66,12 +77,6 @@ public class gameboard extends JPanel implements MouseListener {
                 stones[e.getX() / 75][e.getY() / 75] = 2;
             repaint();
         }
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {    //마우스 버튼 누름
-
     }
 
     @Override
