@@ -1,15 +1,17 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class game extends JFrame {
+public class game extends JFrame implements MouseListener {
     gameboard board = new gameboard();
     Font font = new Font("SanSerif", Font.BOLD, 20);
     static int num1, num2;
     static Color btn1 = Color.green;
     static Color btn2 = Color.GRAY;
     static JLabel score1, score2, player1, player2;
-    game(){
+    public game(){
         setTitle("지민이의 오델로 게임");
         setSize(900, 700);
         setLocationRelativeTo(null);
@@ -51,8 +53,35 @@ public class game extends JFrame {
         add(score1);
         add(score2);
 
+        board.a.again.addMouseListener(this);
+
         setVisible(true);
     }
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+            setVisible(false);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
     public static void main(String[] args) {
         new game();
     }

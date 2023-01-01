@@ -7,6 +7,7 @@ public class result extends JFrame implements ActionListener {
     Font font = new Font("SanSerif", Font.BOLD, 20);
     Font winfont = new Font("SanSerif", Font.BOLD, 50);
     JLabel win1, win2;
+    JButton again;
     result(){
         setTitle("게임 결과");
         setSize(600,500);
@@ -14,7 +15,7 @@ public class result extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setLayout(null);
-        JButton again = new JButton("Try Again");
+        again = new JButton("Try Again");
         JButton exit = new JButton("Exit");
         win1 = new JLabel("!!!! Player 1 Win !!!!");
         win2 = new JLabel("!!!! Player 2 Win !!!!");
@@ -45,16 +46,16 @@ public class result extends JFrame implements ActionListener {
         again.addActionListener(this);
         exit.addActionListener(this);
 
-        setVisible(true);
+        setVisible(false);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Exit")){
-            setVisible(false);
+            System.exit(0);
         }
         if(e.getActionCommand().equals("Try Again")){
+            dispose();
             new game();
-            setVisible(false);
         }
     }
     public static void main(String[] args) {

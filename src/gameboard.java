@@ -9,6 +9,7 @@ public class gameboard extends JPanel implements MouseListener {
     int[][] stones = new int[8][8];     // 1 (black), 2 (white)
     Color temp;
     int count;
+    result a = new result();
     gameboard(){
         setBounds(50, 50, 600, 600);
         setBackground(new Color(201, 146, 65));
@@ -47,8 +48,9 @@ public class gameboard extends JPanel implements MouseListener {
         }
         game.score1.setText("● X " + game.num1);
         game.score2.setText("○ X " + game.num2);
-        if(count == 0)
-            new result();
+        if(count == 0){
+            a.setVisible(true);
+        }
         game.num1 = game.num2 = count = 0;
 
     }
