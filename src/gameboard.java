@@ -12,8 +12,8 @@ public class gameboard extends JPanel implements MouseListener {
 //    result a = new result();
     gameboard(){
         setBounds(50, 50, 600, 600);
-        setBackground(new Color(201, 146, 65));
-        setBorder(new LineBorder(Color.black, 2));
+        setBackground(new Color(218, 167, 96));
+        setBorder(new LineBorder(Color.black, 3));
 
         stones[3][3] = stones[4][4] = -1;
         stones[3][4] = stones[4][3] = 1;
@@ -56,7 +56,7 @@ public class gameboard extends JPanel implements MouseListener {
         if((count + check) == 0){
 //            System.out.println(game.num1);
 //            System.out.println(game.num2);
-            new result();
+            new result(this);
 //            setVisible(true);
         }
         else if(check == 0){
@@ -64,7 +64,7 @@ public class gameboard extends JPanel implements MouseListener {
             new nomove();
             color = !color;
             if(finish == 2){
-                new result();
+                new result(this);
             }
             repaint();
         }
@@ -73,7 +73,6 @@ public class gameboard extends JPanel implements MouseListener {
         }
         game.num1 = game.num2 = count = check = 0;
     }
-
     @Override
     public void mouseClicked(MouseEvent e) {    //마우스 버튼 클릭
 

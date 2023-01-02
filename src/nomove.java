@@ -32,9 +32,9 @@ public class nomove extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new nomove();
-    }
+//    public static void main(String[] args) {
+//        new nomove();
+//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

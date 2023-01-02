@@ -8,7 +8,9 @@ public class result extends JFrame implements ActionListener {
     Font winfont = new Font("SanSerif", Font.BOLD, 50);
     JLabel win1, win2, equal;
     JButton again;
-    result(){
+    gameboard board;
+    result(gameboard board){
+        this.board = board;
         setTitle("게임 결과");
         setSize(600,500);
         setLocationRelativeTo(null);
@@ -64,10 +66,15 @@ public class result extends JFrame implements ActionListener {
         }
         if(e.getActionCommand().equals("Try Again")){
             dispose();
-            new game();
+            for(int i = 0; i < 8; i++){
+                for(int j = 0; j < 8; j++){
+                    board.stones[i][j] = 0;
+                }
+            }
+            board.stones[3][3] = board.stones[4][4] = -1;
+            board.stones[3][4] = board.stones[4][3] = 1;
+            board.color = true;
+            board.repaint();
         }
-    }
-    public static void main(String[] args) {
-        new result();
     }
 }
