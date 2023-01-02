@@ -8,8 +8,8 @@ public class gameboard extends JPanel implements MouseListener {
     boolean color = true;   //true(black), false(white)
     int[][] stones = new int[8][8];     // 1 (black), -1 (white), 3 (놓을 수 있음)
     Color temp;
-    int count;
-    result a = new result();
+    int count, check, finish;
+//    result a = new result();
     gameboard(){
         setBounds(50, 50, 600, 600);
         setBackground(new Color(201, 146, 65));
@@ -45,7 +45,7 @@ public class gameboard extends JPanel implements MouseListener {
                 else if(stones[i][j] == 3){
                     g.setColor(Color.gray);
                     g.drawOval(i * 75, j * 75, 75, 75);
-                    count++;
+                    check++;
                 }
                 else
                     count++;    // 다 stones가 찼을 경우
@@ -53,11 +53,25 @@ public class gameboard extends JPanel implements MouseListener {
         }
         game.score1.setText("● X " + game.num1);
         game.score2.setText("○ X " + game.num2);
-        if(count == 0){
-            a.setVisible(true);
+        if((count + check) == 0){
+            System.out.println(game.num1);
+            System.out.println(game.num2);
+            new result();
+//            setVisible(true);
         }
-        game.num1 = game.num2 = count = 0;
-
+        else if(check == 0){
+            finish++;
+            new nomove();
+            color = !color;
+            if(finish == 2){
+                new result();
+            }
+            repaint();
+        }
+        else{
+            finish = 0;
+        }
+        game.num1 = game.num2 = count = check = 0;
     }
 
     @Override

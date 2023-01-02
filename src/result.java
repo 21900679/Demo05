@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class result extends JFrame implements ActionListener {
     Font font = new Font("SanSerif", Font.BOLD, 20);
     Font winfont = new Font("SanSerif", Font.BOLD, 50);
-    JLabel win1, win2;
+    JLabel win1, win2, equal;
     JButton again;
     result(){
         setTitle("게임 결과");
@@ -19,9 +19,11 @@ public class result extends JFrame implements ActionListener {
         JButton exit = new JButton("Exit");
         win1 = new JLabel("!!!! Player 1 Win !!!!");
         win2 = new JLabel("!!!! Player 2 Win !!!!");
+        equal = new JLabel("!!!! Both Win !!!!");
 
         win1.setBounds(70, 100, 480, 80);
         win2.setBounds(70, 100, 480, 80);
+        equal.setBounds(115, 100, 480, 80);
         again.setBounds(150, 250, 300,60);
         exit.setBounds(150, 330, 300, 60);
 
@@ -33,20 +35,27 @@ public class result extends JFrame implements ActionListener {
         exit.setFont(font);
         win1.setFont(winfont);
         win2.setFont(winfont);
+        equal.setFont(winfont);
 
         add(again);
         add(exit);
+
+        System.out.println("aaa" + game.num1);
+        System.out.println("aaa" + game.num2);
+
         if(game.num1 > game.num2){
             add(win1);
         }
-        else{
-            add(win2);
+        else if(game.num1 == game.num2){
+            add(equal);
         }
+        else
+            add(win2);
 
         again.addActionListener(this);
         exit.addActionListener(this);
 
-        setVisible(false);
+        setVisible(true);
     }
     @Override
     public void actionPerformed(ActionEvent e) {

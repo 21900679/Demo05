@@ -53,7 +53,7 @@ public class game extends JFrame implements MouseListener {
         add(score1);
         add(score2);
 
-        board.a.again.addMouseListener(this);
+//        board.a.again.addMouseListener(this);
 
         setVisible(true);
     }
