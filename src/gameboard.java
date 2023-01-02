@@ -45,6 +45,7 @@ public class gameboard extends JPanel implements MouseListener {
                 else if(stones[i][j] == 3){
                     g.setColor(Color.gray);
                     g.drawOval(i * 75, j * 75, 75, 75);
+                    count++;
                 }
                 else
                     count++;    // 다 stones가 찼을 경우
@@ -66,8 +67,8 @@ public class gameboard extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {    //마우스 버튼 누름
-        System.out.println("X = " + e.getX());
-        System.out.println("Y = " + e.getY());
+//        System.out.println("X = " + e.getX());
+//        System.out.println("Y = " + e.getY());
 
         if(stones[e.getX() / 75][e.getY() / 75] == 3){
             temp = game.btn1;
@@ -81,6 +82,7 @@ public class gameboard extends JPanel implements MouseListener {
             }
             else
                 stones[e.getX() / 75][e.getY() / 75] = 1;
+            new change(stones, e.getX() / 75, e.getY()/ 75);
             repaint();
         }
     }
