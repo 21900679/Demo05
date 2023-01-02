@@ -32,7 +32,7 @@ public class check {
     public void right(int[][] stones, int x, int y){
         ok = false;
         int value = stones[x][y];
-        System.out.println("right " + "x = " + x + ", y = " + y);
+//        System.out.println("right " + "x = " + x + ", y = " + y);
         for(int i = x+1; i < 8; i++){
             if(stones[i][y] == value || stones[x+1][y] == 0 || stones[i][y] == 3){
                 if(stones[i][y] == value)
@@ -43,8 +43,8 @@ public class check {
                 continue;
             }
             else if(stones[i][y] == 0 && stones[i-1][y] == value * (-1)){
-                System.out.println("right");
-                System.out.println("x = " + i + ", y = " + y);
+//                System.out.println("right");
+//                System.out.println("x = " + i + ", y = " + y);
                 stones[i][y] = 3;
                 break;
             }
@@ -53,7 +53,7 @@ public class check {
     public void left(int[][] stones, int x, int y){
         ok = false;
         int value = stones[x][y];
-        System.out.println("left " + "x = " + x + ", y = " + y);
+//        System.out.println("left " + "x = " + x + ", y = " + y);
         for(int i = x-1; i >= 0; i--){
             if(stones[i][y] == value || stones[x-1][y] == 0 || stones[i][y] == 3){
                 if(stones[i][y] == value)
@@ -64,8 +64,8 @@ public class check {
                 continue;
             }
             else if(stones[i][y] == 0 && stones[i+1][y] == value * (-1)){
-                System.out.println("left");
-                System.out.println("x = " + i + ", y = " + y);
+//                System.out.println("left");
+//                System.out.println("x = " + i + ", y = " + y);
                 stones[i][y] = 3;
                 break;
             }
@@ -74,7 +74,7 @@ public class check {
     public void up(int[][] stones, int x, int y){
         ok = false;
         int value = stones[x][y];
-        System.out.println("up " + "x = " + x + ", y = " + y);
+//        System.out.println("up " + "x = " + x + ", y = " + y);
         for(int i = y-1; i >= 0; i--){
             if(stones[x][i] == value || stones[x][y-1] == 0 || stones[x][i] == 3){
                 if(stones[x][i] == value)
@@ -85,8 +85,8 @@ public class check {
                 continue;
             }
             else if(stones[x][i] == 0 && stones[x][i+1] == value * (-1)){
-                System.out.println("up");
-                System.out.println("x = " + x + ", y = " + i);
+//                System.out.println("up");
+//                System.out.println("x = " + x + ", y = " + i);
                 stones[x][i] = 3;
                 break;
             }
@@ -95,7 +95,7 @@ public class check {
     public void down(int[][] stones, int x, int y){
         ok = false;
         int value = stones[x][y];
-        System.out.println("down " + "x = " + x + ", y = " + y);
+//        System.out.println("down " + "x = " + x + ", y = " + y);
         for(int i = y+1; i < 8; i++){
             if(stones[x][i] == value || stones[x][y+1] == 0 || stones[x][i] == 3){
                 if(stones[x][i] == value)
@@ -106,8 +106,8 @@ public class check {
                 continue;
             }
             else if(stones[x][i] == 0 && stones[x][i-1] == value * (-1)){
-                System.out.println("down");
-                System.out.println("x = " + x + ", y = " + i);
+//                System.out.println("down");
+//                System.out.println("x = " + x + ", y = " + i);
                 stones[x][i] = 3;
                 break;
             }
@@ -116,7 +116,7 @@ public class check {
     public void rightup(int[][] stones, int x, int y){
         ok = false;
         int value = stones[x][y];
-        System.out.println("rightup " + "x = " + x + ", y = " + y);
+//        System.out.println("rightup " + "x = " + x + ", y = " + y);
         int i, j;
         for(i = x+1, j = y-1; i < 8 && j >= 0; i++, j--){
             if(stones[i][j] == value || stones[x+1][y-1] == 0 || stones[i][j] == 3){
@@ -128,8 +128,8 @@ public class check {
                 continue;
             }
             else if(stones[i][j] == 0 && stones[i-1][j+1] == value * (-1)){
-                System.out.println("rightup");
-                System.out.println("x = " + i + ", y = " + j);
+//                System.out.println("rightup");
+//                System.out.println("x = " + i + ", y = " + j);
                 stones[i][j] = 3;
                 break;
             }
@@ -139,7 +139,7 @@ public class check {
         ok = false;
         int value = stones[x][y];
         int i, j;
-        System.out.println("leftup " + "x = " + x + ", y = " + y);
+//        System.out.println("leftup " + "x = " + x + ", y = " + y);
         for(i = x-1, j = y-1; i >= 0 && j >= 0; i--, j--){
             if(stones[i][j] == value || stones[x-1][y-1] == 0 || stones[i][j] == 3){
                 if(stones[i][j] == value)
@@ -150,8 +150,8 @@ public class check {
                 continue;
             }
             else if(stones[i][j] == 0 && stones[i+1][j+1] == value * (-1)){
-                System.out.println("leftup");
-                System.out.println("x = " + i + ", y = " + j);
+//                System.out.println("leftup");
+//                System.out.println("x = " + i + ", y = " + j);
                 stones[i][j] = 3;
                 break;
             }
@@ -161,7 +161,7 @@ public class check {
         ok = false;
         int value = stones[x][y];
         int i, j;
-        System.out.println("rightdown " + "x = " + x + ", y = " + y);
+//        System.out.println("rightdown " + "x = " + x + ", y = " + y);
         for(i = x+1, j = y+1; i < 8 && j < 8; i++, j++){
             if(stones[i][j] == value || stones[x+1][y+1] == 0 || stones[i][j] == 3){
                 if(stones[i][j] == value)
@@ -172,8 +172,8 @@ public class check {
                 continue;
             }
             else if(stones[i][j] == 0 && stones[i-1][j-1] == value * (-1)){
-                System.out.println("rightdown");
-                System.out.println("x = " + i + ", y = " + j);
+//                System.out.println("rightdown");
+//                System.out.println("x = " + i + ", y = " + j);
                 stones[i][j] = 3;
                 break;
             }
@@ -183,7 +183,7 @@ public class check {
         ok = false;
         int value = stones[x][y];
         int i, j;
-        System.out.println("leftdown " + "x = " + x + ", y = " + y);
+//        System.out.println("leftdown " + "x = " + x + ", y = " + y);
         for(i = x-1, j = y+1; i >= 0 && j < 8; i--, j++){
             if(stones[i][j] == value || stones[x-1][y+1] == 0 || stones[i][j] == 3){
                 if(stones[i][j] == value)
@@ -194,8 +194,8 @@ public class check {
                 continue;
             }
             else if(stones[i][j] == 0 && stones[i+1][j-1] == value * (-1)){
-                System.out.println("leftdown");
-                System.out.println("x = " + i + ", y = " + j);
+//                System.out.println("leftdown");
+//                System.out.println("x = " + i + ", y = " + j);
                 stones[i][j] = 3;
                 break;
             }

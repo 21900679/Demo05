@@ -40,8 +40,8 @@ public class result extends JFrame implements ActionListener {
         add(again);
         add(exit);
 
-        System.out.println("aaa" + game.num1);
-        System.out.println("aaa" + game.num2);
+//        System.out.println("aaa" + game.num1);
+//        System.out.println("aaa" + game.num2);
 
         if(game.num1 > game.num2){
             add(win1);

@@ -54,8 +54,8 @@ public class gameboard extends JPanel implements MouseListener {
         game.score1.setText("● X " + game.num1);
         game.score2.setText("○ X " + game.num2);
         if((count + check) == 0){
-            System.out.println(game.num1);
-            System.out.println(game.num2);
+//            System.out.println(game.num1);
+//            System.out.println(game.num2);
             new result();
 //            setVisible(true);
         }

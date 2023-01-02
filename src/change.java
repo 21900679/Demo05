@@ -14,7 +14,7 @@ public class change {
     public void right(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change right");
+//        System.out.println("change right");
         a.right(stones, x, y);
         if(check.ok){
             for(int i = x+1; i < 8; i++){
@@ -30,7 +30,7 @@ public class change {
     public void left(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change left");
+//        System.out.println("change left");
         a.left(stones, x, y);
         if(check.ok){
             for(int i = x-1; i > 0; i--){
@@ -46,7 +46,7 @@ public class change {
     public void up(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change up");
+//        System.out.println("change up");
         a.up(stones, x, y);
         if(check.ok){
             for(int i = y-1; i > 0; i--){
@@ -62,7 +62,7 @@ public class change {
     public void down(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change down");
+//        System.out.println("change down");
         a.down(stones, x, y);
         if(check.ok){
             for(int i = y+1; i < 8; i++){
@@ -78,7 +78,7 @@ public class change {
     public void rightup(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change rightup");
+//        System.out.println("change rightup");
         a.rightup(stones, x, y);
         int i, j;
         if(check.ok){
@@ -95,7 +95,7 @@ public class change {
     public void leftup(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change leftup");
+//        System.out.println("change leftup");
         a.leftup(stones, x, y);
         int i, j;
         if(check.ok){
@@ -112,7 +112,7 @@ public class change {
     public void rightdown(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change rightdown");
+//        System.out.println("change rightdown");
         a.rightdown(stones, x, y);
         int i, j;
         if(check.ok){
@@ -129,7 +129,7 @@ public class change {
     public void leftdown(int[][] stones, int x, int y){
         check a = new check();
         int value = stones[x][y];
-        System.out.println("change leftdown");
+//        System.out.println("change leftdown");
         a.leftdown(stones, x, y);
         int i, j;
         if(check.ok){
