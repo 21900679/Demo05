@@ -62,6 +62,11 @@ public class gameboard extends JPanel implements MouseListener {
         else if(check == 0){
             finish++;
             new nomove();
+            temp = game.btn1;
+            game.btn1 = game.btn2;
+            game.btn2 = temp;
+            game.player1.setBackground(game.btn1);
+            game.player2.setBackground(game.btn2);
             color = !color;
             if(finish == 2){
                 new result(this);
