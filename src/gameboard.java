@@ -54,17 +54,14 @@ public class gameboard extends JPanel implements MouseListener {
         game.score1.setText("● X " + game.num1);
         game.score2.setText("○ X " + game.num2);
         if((count + check) == 0){       // 자리가 다 찼을 때,
-//            System.out.println(game.num1);
-//            System.out.println(game.num2);
             new result(this);
-//            setVisible(true);
         }
         else if(game.num1 == 0 || game.num2 == 0){
             new result(this);
         }
-        else if(check == 0){        // 놓을 수 있는 자리가 없을 때,
-            finish++;
+        else if(check == 0 && finish != 2){        // 놓을 수 있는 자리가 없을 때,
             new nomove();
+            finish++;
             temp = game.btn1;
             game.btn1 = game.btn2;
             game.btn2 = temp;
