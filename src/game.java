@@ -77,8 +77,10 @@ public class game extends JFrame implements ActionListener {
             board.stones[3][3] = board.stones[4][4] = -1;
             board.stones[3][4] = board.stones[4][3] = 1;
             board.color = true;
-            player1.setBackground(Color.green);
-            player2.setBackground(Color.black);
+            game.btn1 = Color.green;
+            game.btn2 = Color.black;
+            player1.setBackground(game.btn1);
+            player2.setBackground(game.btn2);
             board.repaint();
         }
     }
